@@ -5,18 +5,27 @@ AST *Parser::parse() {
   expect(Token::eoi);
   return Res;
 }
-
+/* 
+calc : ("with" ident ("," ident)* ":")? expr ;
+expr: term(("+"|"-")term)* ;
+term : factor (( "*" | "/") factor)* ;
+factor : ident | number | "(" expr ")" ; 
+ident : ([a-zAZ])+ ;
+number : ([0-9])+ ;
+ */
 AST *Parser::parseCalc() {
   Expr *E;
   llvm::SmallVector<llvm::StringRef, 8> Vars;
   if (Tok.is(Token::KW_with)) {
     advance();
+    // first ident
     if (expect(Token::ident))
       goto _error;
     Vars.push_back(Tok.getText());
     advance();
     while (Tok.is(Token::comma)) {
       advance();
+      // second ident
       if (expect(Token::ident))
         goto _error;
       Vars.push_back(Tok.getText());

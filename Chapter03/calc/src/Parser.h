@@ -6,7 +6,9 @@
 #include "llvm/Support/raw_ostream.h"
 
 class Parser {
+  // find the next token
   Lexer &Lex;
+  // store the current token
   Token Tok;
   bool HasError;
 

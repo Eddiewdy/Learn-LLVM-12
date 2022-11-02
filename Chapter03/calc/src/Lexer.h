@@ -28,6 +28,7 @@ public:
 
 private:
   TokenKind Kind;
+  // 指向令牌文本的开头
   llvm::StringRef Text;
 
 public:
