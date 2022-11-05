@@ -8,7 +8,7 @@
 class Parser {
   // find the next token
   Lexer &Lex;
-  // store the current token
+  // store the next token
   Token Tok;
   bool HasError;
 

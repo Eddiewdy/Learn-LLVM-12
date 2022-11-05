@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.def": "cpp",
+        "variant": "cpp",
+        "*.inc": "cpp",
+        "deque": "cpp"
+    }
+}
