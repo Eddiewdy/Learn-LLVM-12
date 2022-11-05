@@ -1,0 +1,232 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: calc
+# Configurations: 
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build/
+
+#############################################
+# Utility command for intrinsics_gen
+
+build intrinsics_gen: phony
+
+
+#############################################
+# Utility command for omp_gen
+
+build omp_gen: phony
+
+
+#############################################
+# Utility command for acc_gen
+
+build acc_gen: phony
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build && /opt/homebrew/Cellar/cmake/3.24.2/bin/ccmake -S/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc -B/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build && /opt/homebrew/Cellar/cmake/3.24.2/bin/cmake --regenerate-during-build -S/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc -B/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target calc
+
+
+#############################################
+# Order-only phony target for calc
+
+build cmake_object_order_depends_target_calc: phony || src/CMakeFiles/calc.dir
+
+build src/CMakeFiles/calc.dir/Calc.cpp.o: CXX_COMPILER__calc_ /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/Calc.cpp || cmake_object_order_depends_target_calc
+  DEP_FILE = src/CMakeFiles/calc.dir/Calc.cpp.o.d
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk   -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/calc.dir
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_PDB = src/calc.pdb
+
+build src/CMakeFiles/calc.dir/CodeGen.cpp.o: CXX_COMPILER__calc_ /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/CodeGen.cpp || cmake_object_order_depends_target_calc
+  DEP_FILE = src/CMakeFiles/calc.dir/CodeGen.cpp.o.d
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk   -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/calc.dir
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_PDB = src/calc.pdb
+
+build src/CMakeFiles/calc.dir/Lexer.cpp.o: CXX_COMPILER__calc_ /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/Lexer.cpp || cmake_object_order_depends_target_calc
+  DEP_FILE = src/CMakeFiles/calc.dir/Lexer.cpp.o.d
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk   -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/calc.dir
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_PDB = src/calc.pdb
+
+build src/CMakeFiles/calc.dir/Parser.cpp.o: CXX_COMPILER__calc_ /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/Parser.cpp || cmake_object_order_depends_target_calc
+  DEP_FILE = src/CMakeFiles/calc.dir/Parser.cpp.o.d
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk   -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/calc.dir
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_PDB = src/calc.pdb
+
+build src/CMakeFiles/calc.dir/Sema.cpp.o: CXX_COMPILER__calc_ /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/Sema.cpp || cmake_object_order_depends_target_calc
+  DEP_FILE = src/CMakeFiles/calc.dir/Sema.cpp.o.d
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk   -D_DEBUG -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+  INCLUDES = -isystem /usr/local/include -isystem /opt/homebrew/include
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/calc.dir
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_PDB = src/calc.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target calc
+
+
+#############################################
+# Link the executable src/calc
+
+build src/calc: CXX_EXECUTABLE_LINKER__calc_ src/CMakeFiles/calc.dir/Calc.cpp.o src/CMakeFiles/calc.dir/CodeGen.cpp.o src/CMakeFiles/calc.dir/Lexer.cpp.o src/CMakeFiles/calc.dir/Parser.cpp.o src/CMakeFiles/calc.dir/Sema.cpp.o | /usr/local/lib/libLLVMCore.a /usr/local/lib/libLLVMBinaryFormat.a /usr/local/lib/libLLVMRemarks.a /usr/local/lib/libLLVMBitstreamReader.a /usr/local/lib/libLLVMSupport.a /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd /opt/homebrew/lib/libzstd.1.5.2.dylib /Users/yd/miniforge3/lib/libtinfo.dylib /usr/local/lib/libLLVMDemangle.a
+  FLAGS = -fno-rtti -fno-exceptions -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib -Wl,-rpath,/Users/yd/miniforge3/lib  /usr/local/lib/libLLVMCore.a  /usr/local/lib/libLLVMBinaryFormat.a  /usr/local/lib/libLLVMRemarks.a  /usr/local/lib/libLLVMBitstreamReader.a  /usr/local/lib/libLLVMSupport.a  -lm  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd  /opt/homebrew/lib/libzstd.1.5.2.dylib  /Users/yd/miniforge3/lib/libtinfo.dylib  /usr/local/lib/libLLVMDemangle.a
+  OBJECT_DIR = src/CMakeFiles/calc.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = src/CMakeFiles/calc.dir/
+  TARGET_FILE = src/calc
+  TARGET_PDB = src/calc.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build/src && /opt/homebrew/Cellar/cmake/3.24.2/bin/ccmake -S/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc -B/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build/src && /opt/homebrew/Cellar/cmake/3.24.2/bin/cmake --regenerate-during-build -S/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc -B/Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+build calc: phony src/calc
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build
+
+build all: phony src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/build/src
+
+build src/all: phony src/calc
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/CMakeLists.txt /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/CMakeLists.txt /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeNinjaFindMake.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckIncludeFileCXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-C.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindLibXml2.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindZLIB.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU-C.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/SelectLibraryConfigurations.cmake /opt/homebrew/lib/cmake/zstd/zstdConfig.cmake /opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets-release.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets.cmake /usr/local/lib/cmake/llvm/ChooseMSVCCRT.cmake /usr/local/lib/cmake/llvm/DetermineGCCCompatible.cmake /usr/local/lib/cmake/llvm/FindTerminfo.cmake /usr/local/lib/cmake/llvm/LLVM-Config.cmake /usr/local/lib/cmake/llvm/LLVMConfig.cmake /usr/local/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/lib/cmake/llvm/LLVMExports-debug.cmake /usr/local/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/CMakeLists.txt /Users/yd/Documents/LLVM/Learn-LLVM-12/Chapter03/calc/src/CMakeLists.txt /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCCompilerABI.c /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXCompiler.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXCompilerABI.cpp /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeCompilerIdDetection.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompileFeatures.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompilerABI.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineCompilerId.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeFindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeNinjaFindMake.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseImplicitIncludeInfo.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeParseLibraryArchitecture.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakePushCheckState.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCXXCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CMakeTestCompilerCommon.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCXXCompilerFlag.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckCXXSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckIncludeFileCXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ADSP-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ARMCC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/ARMClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/AppleClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Borland-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Clang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Cray-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GHS-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-C.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/HP-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IAR-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Intel-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/LCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/MSVC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/NVHPC-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/PGI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/PathScale-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SCO-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/TI-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/Watcom-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XL-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/zOS-C-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindLibXml2.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindPkgConfig.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/FindZLIB.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckCompilerFlag.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Internal/FeatureTesting.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU-C.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Apple-GNU.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin-Determine-CXX.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.24.2/share/cmake/Modules/SelectLibraryConfigurations.cmake /opt/homebrew/lib/cmake/zstd/zstdConfig.cmake /opt/homebrew/lib/cmake/zstd/zstdConfigVersion.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets-release.cmake /opt/homebrew/lib/cmake/zstd/zstdTargets.cmake /usr/local/lib/cmake/llvm/ChooseMSVCCRT.cmake /usr/local/lib/cmake/llvm/DetermineGCCCompatible.cmake /usr/local/lib/cmake/llvm/FindTerminfo.cmake /usr/local/lib/cmake/llvm/LLVM-Config.cmake /usr/local/lib/cmake/llvm/LLVMConfig.cmake /usr/local/lib/cmake/llvm/LLVMConfigVersion.cmake /usr/local/lib/cmake/llvm/LLVMExports-debug.cmake /usr/local/lib/cmake/llvm/LLVMExports.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
